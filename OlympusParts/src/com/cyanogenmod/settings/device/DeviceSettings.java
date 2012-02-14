@@ -2,8 +2,10 @@ package com.cyanogenmod.settings.device;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceActivity;
 import android.util.Log;
@@ -51,10 +53,6 @@ public class DeviceSettings extends PreferenceActivity implements OnPreferenceCh
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (Utils.isMonkeyRunning()) {
-            return false;
-        }
-
 	if (preference == mSwitchStoragePref) {
             SystemProperties.set("persist.sys.vold.switchexternal",
                     mSwitchStoragePref.isChecked() ? "1" : "0");
