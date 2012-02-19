@@ -71,7 +71,11 @@ ro.hdmi.mirror.enable=true
 # Default USB Mode
 persist.sys.usb.config=mass_storage
 
+<<<<<<< HEAD
 # Allow people to exchange sdcard and emmc mountpoints from CMParts
+=======
+# Vold switchability
+>>>>>>> upstream/ics
 ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
 
 # Fingerprint
